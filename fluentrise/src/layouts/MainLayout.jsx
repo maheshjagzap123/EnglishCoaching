@@ -36,10 +36,14 @@ export default function MainLayout({ children, title, description }) {
           ✦ Demo Website — All content is fictional and for demonstration purposes only
         </div>
       )}
-      <Navbar />
+      <Navbar hasBanner={siteConfig.demoMode} />
       <main
         id="main-content"
-        style={{ paddingTop: siteConfig.demoMode ? "104px" : "68px" }}
+        style={{
+          paddingTop: siteConfig.demoMode
+            ? "calc(var(--banner-h) + var(--navbar-h))"
+            : "var(--navbar-h)",
+        }}
       >
         {children}
       </main>

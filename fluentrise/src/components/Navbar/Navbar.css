@@ -10,6 +10,11 @@
   transition: all 0.3s ease;
 }
 
+/* When the demo banner is present, the navbar sits just below it */
+.navbar--has-banner {
+  top: var(--banner-h);
+}
+
 .navbar--scrolled {
   border-bottom-color: var(--color-border);
   box-shadow: var(--shadow-sm);
@@ -125,6 +130,10 @@
   visibility: hidden;
   transform: translateY(-8px);
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.navbar__mobile--has-banner {
+  top: calc(var(--banner-h) + var(--navbar-h));
 }
 
 .navbar__mobile.open {

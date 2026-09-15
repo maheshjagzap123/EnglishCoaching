@@ -16,7 +16,7 @@ const navLinks = [
   { label: "Contact", to: "/contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ hasBanner = false }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <>
-    <header className={`navbar${scrolled ? " navbar--scrolled" : ""}`}>
+    <header className={`navbar${scrolled ? " navbar--scrolled" : ""}${hasBanner ? " navbar--has-banner" : ""}`}>
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo">
           <span className="navbar__logo-icon">FR</span>
@@ -71,7 +71,7 @@ export default function Navbar() {
       </div>
     </header>
 
-    <div className={`navbar__mobile${open ? " open" : ""}`} aria-hidden={!open}>
+    <div className={`navbar__mobile${open ? " open" : ""}${hasBanner ? " navbar__mobile--has-banner" : ""}`} aria-hidden={!open}>
       <nav className="navbar__mobile-nav">
         {navLinks.map((l) => (
           <Link

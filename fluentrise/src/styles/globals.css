@@ -4,6 +4,9 @@
    ============================================================ */
 
 :root {
+  /* Layout */
+  --navbar-h: 68px;
+
   /* Brand Colors */
   --color-primary: #1d4ed8;
   --color-primary-dark: #1e40af;

@@ -30,6 +30,7 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [location]);
 
   return (
+    <>
     <header className={`navbar${scrolled ? " navbar--scrolled" : ""}`}>
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo">
@@ -68,24 +69,25 @@ export default function Navbar() {
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
-      <div className={`navbar__mobile${open ? " open" : ""}`} aria-hidden={!open}>
-        <nav className="navbar__mobile-nav">
-          {navLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={`navbar__mobile-link${location.pathname === l.to ? " active" : ""}`}
-            >
-              {l.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="navbar__mobile-ctas">
-          <Link to="/free-demo" className="btn btn--primary">Book Free Demo</Link>
-          <button className="btn btn--whatsapp" onClick={() => openWhatsApp()}>WhatsApp Us</button>
-        </div>
-      </div>
     </header>
+
+    <div className={`navbar__mobile${open ? " open" : ""}`} aria-hidden={!open}>
+      <nav className="navbar__mobile-nav">
+        {navLinks.map((l) => (
+          <Link
+            key={l.to}
+            to={l.to}
+            className={`navbar__mobile-link${location.pathname === l.to ? " active" : ""}`}
+          >
+            {l.label}
+          </Link>
+        ))}
+      </nav>
+      <div className="navbar__mobile-ctas">
+        <Link to="/free-demo" className="btn btn--primary">Book Free Demo</Link>
+        <button className="btn btn--whatsapp" onClick={() => openWhatsApp()}>WhatsApp Us</button>
+      </div>
+    </div>
+    </>
   );
 }

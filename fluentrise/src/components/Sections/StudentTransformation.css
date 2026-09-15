@@ -1,0 +1,102 @@
+.transform-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.transform-col {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+}
+
+.transform-col--before { border-top: 3px solid #ef4444; }
+.transform-col--after { border-top: 3px solid var(--color-success); }
+
+.transform-col__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.transform-col__header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.transform-col__tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.625rem;
+  border-radius: var(--radius-full);
+}
+
+.transform-col__tag--before { background: #fee2e2; color: #dc2626; }
+.transform-col__tag--after { background: #dcfce7; color: #16a34a; }
+
+.transform-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transform-col ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.transform-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.transform-icon--x { background: #fee2e2; color: #dc2626; }
+.transform-icon--check { background: #dcfce7; color: #16a34a; }
+
+.transform-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+}
+
+.transform-arrow span {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.transform-disclaimer {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .transform-grid { grid-template-columns: 1fr; }
+  .transform-arrow { flex-direction: row; justify-content: center; }
+  .transform-arrow span { writing-mode: horizontal-tb; }
+}

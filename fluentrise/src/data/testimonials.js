@@ -1,0 +1,59 @@
+// Sample/demo testimonials — replace with real student reviews for each client
+export const testimonials = [
+  {
+    id: 1,
+    name: "Aditya Patil",
+    program: "Basic Spoken English",
+    rating: 5,
+    text: "I used to freeze whenever I had to speak English. After just 8 weeks at FluentRise, I can hold conversations confidently. The speaking activities and small batch size made a huge difference.",
+    initials: "AP",
+    color: "blue",
+  },
+  {
+    id: 2,
+    name: "Meera Joshi",
+    program: "Interview Preparation",
+    rating: 5,
+    text: "I had three failed interviews before joining this program. The mock interview sessions were incredibly realistic. I cleared my next interview and got placed in a good company.",
+    initials: "MJ",
+    color: "purple",
+  },
+  {
+    id: 3,
+    name: "Rohan Nair",
+    program: "IELTS Preparation",
+    rating: 5,
+    text: "Scored 7.5 in IELTS on my first attempt. The structured approach and regular practice tests helped me understand exactly where I needed to improve. Highly recommend.",
+    initials: "RN",
+    color: "green",
+  },
+  {
+    id: 4,
+    name: "Kavya Reddy",
+    program: "Business English",
+    rating: 5,
+    text: "My manager noticed the improvement in my emails and presentations within weeks. The program is very practical — no unnecessary theory, just real workplace scenarios.",
+    initials: "KR",
+    color: "orange",
+  },
+  {
+    id: 5,
+    name: "Sanjay More",
+    program: "Advanced Spoken English",
+    rating: 5,
+    text: "I had basic English but lacked fluency. This program pushed me to speak more, make mistakes, and improve. The trainers are patient and genuinely invested in your progress.",
+    initials: "SM",
+    color: "teal",
+  },
+  {
+    id: 6,
+    name: "Pooja Iyer",
+    program: "Personality Development",
+    rating: 5,
+    text: "Not just English — this program changed how I carry myself. I am more confident in social situations, presentations, and even casual conversations. Worth every rupee.",
+    initials: "PI",
+    color: "red",
+  },
+];
+
+export default testimonials;

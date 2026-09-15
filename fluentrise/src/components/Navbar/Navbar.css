@@ -134,12 +134,19 @@
   transform: translateY(0);
 }
 
+.navbar__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .navbar__mobile-link {
   display: block;
-  padding: 0.75rem 0.5rem;
+  width: 100%;
+  padding: 0.875rem 0.5rem;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   border-bottom: 1px solid var(--color-border);
   transition: color var(--transition);
 }

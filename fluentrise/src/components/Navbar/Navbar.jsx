@@ -70,7 +70,7 @@ export default function Navbar() {
       </div>
 
       <div className={`navbar__mobile${open ? " open" : ""}`} aria-hidden={!open}>
-        <nav>
+        <nav className="navbar__mobile-nav">
           {navLinks.map((l) => (
             <Link
               key={l.to}

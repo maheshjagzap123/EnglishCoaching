@@ -38,6 +38,20 @@
   font-weight: 500;
 }
 
+.stats__star {
+  color: var(--color-accent-dark);
+  font-size: 0.9rem;
+  margin-left: 2px;
+}
+
+.stats__note {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.6875rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 768px) {
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
 }

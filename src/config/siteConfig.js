@@ -35,18 +35,28 @@ export const siteConfig = {
     "Hello! I am interested in your English programs at Veyora English Academy. Could you please share details about available batches and the free demo class?",
   instagram: "https://instagram.com/veyoraacademy",
   facebook: "https://facebook.com/veyoraacademy",
+  youtube: "https://youtube.com/@veyoraacademy",
   googleBusinessUrl: "https://g.page/veyoraacademy",
 
   // --- SEO ---
   siteUrl: "https://veyora.example",
   ogImage: "/og-image.jpg",
 
-  // --- STATS (demo numbers) ---
+  // --- STATS (demo/sample numbers) ---
+  // `count` is used for the animated count-up; `suffix` is appended after it.
   stats: [
-    { value: "500+", label: "Students Trained" },
-    { value: "10+", label: "Years Experience" },
-    { value: "4.8/5", label: "Student Rating" },
-    { value: "15+", label: "Courses Offered" },
+    { value: "500+", count: 500, suffix: "+", label: "Learners", sample: true },
+    { value: "20+", count: 20, suffix: "+", label: "Demo Batches", sample: true },
+    { value: "4.9/5", label: "Sample Rating", sample: true },
+    { value: "15+", count: 15, suffix: "+", label: "Courses Offered", sample: true },
+  ],
+
+  // --- HERO TRUST INDICATORS (demo/sample) ---
+  heroTrust: [
+    { value: "500+", label: "Learners", sample: true },
+    { value: "4.9/5", label: "Sample Rating", sample: true },
+    { value: "IELTS", label: "Interview Prep" },
+    { value: "Online + Offline", label: "Flexible" },
   ],
 
   // --- ANALYTICS (add IDs when ready) ---

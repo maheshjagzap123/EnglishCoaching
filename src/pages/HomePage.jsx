@@ -1,16 +1,19 @@
 import MainLayout from "../layouts/MainLayout";
 import Hero from "../components/Hero/Hero";
 import StatsSection from "../components/Sections/StatsSection";
-import CoursesSection from "../components/Sections/CoursesSection";
 import WhyChooseUs from "../components/Sections/WhyChooseUs";
-import LearningMethodology from "../components/Sections/LearningMethodology";
-import SpeakingActivities from "../components/Sections/SpeakingActivities";
-import BatchesSection from "../components/Sections/BatchesSection";
-import TrainersSection from "../components/Sections/TrainersSection";
+import CoursesSection from "../components/Sections/CoursesSection";
+import CourseFinder from "../components/Sections/CourseFinder";
+import HowWeTeach from "../components/Sections/HowWeTeach";
+import VideoSection from "../components/Sections/VideoSection";
+import ReelsSection from "../components/Sections/ReelsSection";
 import StudentTransformation from "../components/Sections/StudentTransformation";
+import TrainersSection from "../components/Sections/TrainersSection";
+import SuccessStories from "../components/Sections/SuccessStories";
 import TestimonialsSection from "../components/Sections/TestimonialsSection";
 import ReviewsSection from "../components/Sections/ReviewsSection";
-import GallerySection from "../components/Sections/GallerySection";
+import PricingSection from "../components/Sections/PricingSection";
+import AssessmentTeaser from "../components/Sections/AssessmentTeaser";
 import FAQSection from "../components/Sections/FAQSection";
 import ContactSection from "../components/Sections/ContactSection";
 import CTASection from "../components/Sections/CTASection";
@@ -20,23 +23,45 @@ import { siteConfig } from "../config/siteConfig";
 export default function HomePage() {
   return (
     <MainLayout
-      description={`${siteConfig.name} — ${siteConfig.tagline}. Spoken English classes in ${siteConfig.city}. Online and offline batches available.`}
+      description={`${siteConfig.name} — ${siteConfig.tagline} Practical spoken English, interview preparation and exam coaching in ${siteConfig.city}. Online and offline batches.`}
     >
+      {/* Dark hero */}
       <Hero />
+      {/* Warm trust strip */}
       <StatsSection />
-      <CoursesSection limit={4} />
+      {/* White — brand story */}
       <WhyChooseUs />
-      <LearningMethodology />
-      <SpeakingActivities />
-      <BatchesSection limit={5} />
-      <TrainersSection />
+      {/* White — courses */}
+      <CoursesSection limit={6} />
+      {/* Cream — interactive finder */}
+      <CourseFinder />
+      {/* Muted — how we teach */}
+      <HowWeTeach />
+      {/* White — video */}
+      <VideoSection />
+      {/* Cream — reels */}
+      <ReelsSection />
+      {/* Dark — transformation */}
       <StudentTransformation />
+      {/* White — trainers */}
+      <TrainersSection />
+      {/* Soft — success stories */}
+      <SuccessStories />
+      {/* Warm — testimonials */}
       <TestimonialsSection />
+      {/* Reviews */}
       <ReviewsSection />
-      <GallerySection limit={6} />
+      {/* White — pricing */}
+      <PricingSection />
+      {/* Dark — assessment teaser */}
+      <AssessmentTeaser />
+      {/* FAQ */}
       <FAQSection />
+      {/* Contact */}
       <ContactSection />
+      {/* Dark final CTA */}
       <CTASection />
+      {/* Demo-only sales pitch */}
       <DemoSalesSection />
     </MainLayout>
   );

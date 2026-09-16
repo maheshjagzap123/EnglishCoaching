@@ -1,22 +1,10 @@
 import { X, Check } from "lucide-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { transformation } from "../../data/successStories";
 import "./StudentTransformation.css";
 
-const before = [
-  "Hesitates to speak in English",
-  "Limited vocabulary",
-  "Fear of making mistakes",
-  "Low confidence in conversations",
-  "Struggles in interviews",
-];
-
-const after = [
-  "Communicates with confidence",
-  "Richer vocabulary in context",
-  "Comfortable making mistakes",
-  "Expresses ideas clearly",
-  "Interview-ready communication",
-];
+const before = transformation.before.points;
+const after = transformation.after.points;
 
 export default function StudentTransformation() {
   const { ref, visible } = useScrollAnimation();
@@ -27,12 +15,13 @@ export default function StudentTransformation() {
         <div className={`transform__content fade-up${visible ? " visible" : ""}`}>
           <span className="section-label section-label--light">Student Journey</span>
           <h2 className="section-title section-title--white">
-            From <em>"I can't speak"</em><br />
-            to <span className="gold">"I can express myself."</span>
+            From hesitation<br />
+            to <span className="gold">confidence.</span>
           </h2>
           <p className="transform__subtitle">
-            Here is what many of our students experience over the course of
-            their learning journey.
+            "{transformation.before.quote}" → "{transformation.after.quote}"
+            <br />
+            Here's the shift many learners experience over their journey.
           </p>
 
           <div className="transform__cols">

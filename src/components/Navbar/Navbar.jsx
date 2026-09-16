@@ -6,13 +6,11 @@ import { openWhatsApp } from "../../utils/whatsapp";
 import "./Navbar.css";
 
 const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Programs", to: "/programs" },
-  { label: "Batches", to: "/batches" },
+  { label: "Courses", to: "/programs" },
+  { label: "How We Teach", to: "/#how-we-teach" },
+  { label: "Success Stories", to: "/#success-stories" },
   { label: "Trainers", to: "/trainers" },
-  { label: "Testimonials", to: "/testimonials" },
-  { label: "Gallery", to: "/gallery" },
+  { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -29,12 +27,31 @@ export default function Navbar({ hasBanner = false }) {
 
   useEffect(() => setOpen(false), [location]);
 
+  // Smooth-scroll to a section when a hash link is clicked
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        // small delay so layout is ready after route/paint
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+      }
+    }
+  }, [location]);
+
+  const isActive = (to) => {
+    if (to.includes("#")) return false;
+    return location.pathname === to;
+  };
+
+  const logoInitials =
+    (siteConfig.shortName || "V").slice(0, 2).toUpperCase();
+
   return (
     <>
     <header className={`navbar${scrolled ? " navbar--scrolled" : ""}${hasBanner ? " navbar--has-banner" : ""}`}>
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo">
-          <span className="navbar__logo-icon">VE</span>
+          <span className="navbar__logo-icon">{logoInitials}</span>
           <span className="navbar__logo-text">{siteConfig.shortName}</span>
         </Link>
 
@@ -43,7 +60,7 @@ export default function Navbar({ hasBanner = false }) {
             <Link
               key={l.to}
               to={l.to}
-              className={`navbar__link${location.pathname === l.to ? " active" : ""}`}
+              className={`navbar__link${isActive(l.to) ? " active" : ""}`}
             >
               {l.label}
             </Link>
@@ -77,7 +94,7 @@ export default function Navbar({ hasBanner = false }) {
           <Link
             key={l.to}
             to={l.to}
-            className={`navbar__mobile-link${location.pathname === l.to ? " active" : ""}`}
+            className={`navbar__mobile-link${isActive(l.to) ? " active" : ""}`}
           >
             {l.label}
           </Link>

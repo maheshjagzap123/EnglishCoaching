@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Users, Star, Zap } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 import { siteConfig } from "../../config/siteConfig";
 import { openWhatsApp } from "../../utils/whatsapp";
 import "./Hero.css";
 
-const trustPoints = [
-  { icon: <Star size={14} />, text: "4.8 / 5 Rating" },
-  { icon: <Users size={14} />, text: "500+ Learners" },
-  { icon: <Zap size={14} />, text: "Online & Offline" },
-];
-
 export default function Hero() {
+  const trust = siteConfig.heroTrust || [];
+
   return (
     <section className="hero" aria-label="Hero">
       <div className="container hero__inner">
@@ -22,68 +18,76 @@ export default function Hero() {
 
           <h1 className="hero__title">
             Speak Better.<br />
-            Go{" "}
-            <span className="hero__title-accent">Further.</span>
+            Go <span className="hero__title-accent">Further.</span>
           </h1>
 
           <p className="hero__subtitle">
-            Build confident English communication skills through practical
-            learning, real conversations, guided practice and personalised feedback.
+            Build the confidence to speak English naturally — in conversations,
+            interviews, presentations and everyday life.
           </p>
 
           <div className="hero__ctas">
             <Link to="/free-demo" className="btn btn--gold btn--lg">
-              Book a Free Demo →
+              Book a Free Demo Class
+              <ArrowRight size={18} />
             </Link>
             <Link to="/programs" className="btn btn--outline-light btn--lg">
-              Explore Programs
+              View Courses
             </Link>
           </div>
 
+          <button
+            type="button"
+            className="hero__whatsapp"
+            onClick={() => openWhatsApp()}
+          >
+            <MessageCircle size={17} />
+            Chat on WhatsApp
+          </button>
+
+          {/* Trust indicators — driven by config, demo-labeled */}
           <div className="hero__trust">
-            {trustPoints.map((t) => (
-              <div key={t.text} className="hero__trust-item">
-                {t.icon}
-                <span>{t.text}</span>
+            {trust.map((t) => (
+              <div key={t.label} className="hero__trust-item">
+                <strong>
+                  {t.value}
+                  {t.sample && <sup className="hero__trust-star">*</sup>}
+                </strong>
+                <span>{t.label}</span>
               </div>
             ))}
           </div>
+          {trust.some((t) => t.sample) && (
+            <p className="hero__trust-note">* Sample / demo figures</p>
+          )}
         </div>
 
-        {/* Right — Image */}
+        {/* Right — Editorial image */}
         <div className="hero__visual">
           <div className="hero__image-wrap">
             <img
-              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=85"
-              alt="Students in an English speaking class"
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=85&auto=format&fit=crop"
+              alt="Learners practising spoken English together in a classroom"
               className="hero__image"
               loading="eager"
+              width="900"
+              height="1000"
             />
 
-            <div className="hero__badge hero__badge--rating">
-              <span className="hero__badge-icon">⭐</span>
-              <div>
-                <strong>4.8 / 5 Rating</strong>
-                <span>From 127+ students</span>
-              </div>
+            <div className="hero__float hero__float--top">
+              <span className="hero__float-dot" />
+              Practical Speaking
             </div>
-
-            <div className="hero__badge hero__badge--students">
-              <span className="hero__badge-icon">🎓</span>
-              <div>
-                <strong>500+ Learners</strong>
-                <span>Trained so far</span>
-              </div>
+            <div className="hero__float hero__float--mid">
+              <span className="hero__float-dot" />
+              Small Batches
+            </div>
+            <div className="hero__float hero__float--bottom">
+              <span className="hero__float-dot" />
+              Online + Offline
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Wave to next section */}
-      <div className="hero__wave">
-        <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,32 C360,64 1080,0 1440,32 L1440,64 L0,64 Z" fill="#F8FAFC" />
-        </svg>
       </div>
     </section>
   );

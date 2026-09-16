@@ -1,18 +1,33 @@
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { siteConfig } from "../../config/siteConfig";
+import { useCountUp } from "../../hooks/useCountUp";
 import "./StatsSection.css";
 
-export default function StatsSection() {
-  const { ref, visible } = useScrollAnimation();
+function StatItem({ stat }) {
+  const { ref, value } = useCountUp(stat.count || 0);
+  const display = stat.count ? `${value}${stat.suffix || ""}` : stat.value;
+
   return (
-    <section className="stats section--soft" ref={ref}>
-      <div className="container stats__grid stagger">
-        {siteConfig.stats.map((s) => (
-          <div key={s.label} className={`stats__item fade-up${visible ? " visible" : ""}`}>
-            <span className="stats__value">{s.value}</span>
-            <span className="stats__label">{s.label}</span>
-          </div>
-        ))}
+    <div className="stats__item" ref={ref}>
+      <span className="stats__value">
+        {display}
+        {stat.sample && <sup className="stats__star">*</sup>}
+      </span>
+      <span className="stats__label">{stat.label}</span>
+    </div>
+  );
+}
+
+export default function StatsSection() {
+  const hasSample = siteConfig.stats.some((s) => s.sample);
+  return (
+    <section className="stats section--soft" aria-label="Key figures">
+      <div className="container">
+        <div className="stats__grid">
+          {siteConfig.stats.map((s) => (
+            <StatItem key={s.label} stat={s} />
+          ))}
+        </div>
+        {hasSample && <p className="stats__note">* Sample / demo figures</p>}
       </div>
     </section>
   );

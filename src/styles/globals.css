@@ -3,7 +3,7 @@
    Premium Editorial Theme — Deep Navy + Warm Gold
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+/* Fonts are loaded via <link> in index.html (preconnect + single request). */
 
 :root {
   /* Layout */

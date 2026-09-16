@@ -12,11 +12,11 @@ export default function CoursesSection({ limit = 4 }) {
     <section className="section" id="programs" ref={ref}>
       <div className="container">
         <SectionHeading
-          label="Our Programs"
-          title="Find the Right Program for You"
-          subtitle="From beginner spoken English to IELTS preparation — we have a program for every goal and every level."
+          label="Courses"
+          title="Find Your Way to Better English"
+          subtitle="From everyday spoken English to interview and exam preparation — there's a path for every goal and every level."
         />
-        <div className={`grid-4 stagger${visible ? " visible" : ""}`}>
+        <div className={`grid-3 stagger${visible ? " visible" : ""}`}>
           {displayed.map((c) => (
             <div key={c.id} className={`fade-up${visible ? " visible" : ""}`}>
               <CourseCard course={c} />

@@ -1,5 +1,3 @@
-// Gallery items — replace src with real images for each client
-// Using Unsplash placeholder URLs for demo
 export const galleryItems = [
   {
     id: 1,

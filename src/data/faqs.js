@@ -45,7 +45,7 @@ export const faqs = [
     id: 8,
     question: "Do you provide a certificate after completion?",
     answer:
-      "Yes. Students who complete the program and meet the attendance requirements receive a program completion certificate from FluentRise English Academy.",
+      "Yes. Students who complete the program and meet the attendance requirements receive a program completion certificate from Veyora English Academy.",
   },
   {
     id: 9,

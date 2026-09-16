@@ -32,10 +32,10 @@ export default function AboutPage() {
       <section className="section">
         <div className="container about-grid">
           <div className="about-content">
-            <SectionHeading label="Who We Are" title="FluentRise English Academy" center={false} />
+            <SectionHeading label="Who We Are" title="Veyora English Academy" center={false} />
             <p>
-              FluentRise English Academy was founded with one goal — to help students, professionals,
-              and job seekers communicate in English with clarity and confidence.
+              Veyora English Academy is a modern learning space focused on helping students communicate
+              in English with greater confidence, clarity and ease.
             </p>
             <p>
               We believe that English communication is a skill, not a talent. With the right guidance,

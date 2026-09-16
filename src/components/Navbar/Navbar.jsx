@@ -34,7 +34,7 @@ export default function Navbar({ hasBanner = false }) {
     <header className={`navbar${scrolled ? " navbar--scrolled" : ""}${hasBanner ? " navbar--has-banner" : ""}`}>
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo">
-          <span className="navbar__logo-icon">FR</span>
+          <span className="navbar__logo-icon">VE</span>
           <span className="navbar__logo-text">{siteConfig.shortName}</span>
         </Link>
 
@@ -55,7 +55,7 @@ export default function Navbar({ hasBanner = false }) {
             <Phone size={15} />
             <span>{siteConfig.phone}</span>
           </a>
-          <Link to="/free-demo" className="btn btn--primary btn--sm">
+          <Link to="/free-demo" className="btn btn--gold btn--sm">
             Book Free Demo
           </Link>
         </div>

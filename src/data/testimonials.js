@@ -1,11 +1,10 @@
-// Sample/demo testimonials — replace with real student reviews for each client
 export const testimonials = [
   {
     id: 1,
     name: "Aditya Patil",
     program: "Basic Spoken English",
     rating: 5,
-    text: "I used to freeze whenever I had to speak English. After just 8 weeks at FluentRise, I can hold conversations confidently. The speaking activities and small batch size made a huge difference.",
+    text: "I used to freeze whenever I had to speak English. After just 8 weeks at Veyora, I can hold conversations confidently. The speaking activities and small batch size made a huge difference.",
     initials: "AP",
     color: "blue",
   },

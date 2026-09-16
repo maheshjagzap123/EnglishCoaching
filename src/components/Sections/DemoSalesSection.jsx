@@ -41,7 +41,7 @@ export default function DemoSalesSection() {
         </div>
 
         <div className="demo-sales__ctas">
-          <button className="btn btn--white btn--lg" onClick={() => openWhatsApp(waMsg)}>
+          <button className="btn btn--gold btn--lg" onClick={() => openWhatsApp(waMsg)}>
             <MessageCircle size={18} /> Talk on WhatsApp
           </button>
           <button className="btn demo-sales__outline btn--lg" onClick={() => openWhatsApp(waMsg)}>

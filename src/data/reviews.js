@@ -1,4 +1,3 @@
-// Sample Google-style reviews — replace with real client reviews
 export const reviews = [
   {
     id: 1,

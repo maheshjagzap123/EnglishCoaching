@@ -15,7 +15,7 @@ export default function ReviewsSection() {
         <SectionHeading
           label="Google Reviews"
           title="Rated Highly by Our Students"
-          subtitle="Sample reviews — replace with your institute's actual Google reviews."
+          subtitle="Genuine feedback from our students on Google."
         />
         <div className="reviews-summary">
           <div className="reviews-summary__score">
@@ -27,7 +27,7 @@ export default function ReviewsSection() {
             href={siteConfig.googleBusinessUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn--secondary"
+            className="btn btn--gold btn--sm"
             onClick={() => trackEvent(events.CLICK_GOOGLE_REVIEWS)}
           >
             See All Reviews <ExternalLink size={15} />

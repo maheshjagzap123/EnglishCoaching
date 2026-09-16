@@ -3,14 +3,14 @@ import { Clock, Monitor, ArrowRight, CheckCircle } from "lucide-react";
 import "./CourseCard.css";
 
 const colorMap = {
-  blue: "#1d4ed8",
-  purple: "#7c3aed",
+  blue: "#102A43",
+  purple: "#1E4976",
   green: "#16a34a",
   orange: "#ea580c",
   red: "#dc2626",
   teal: "#0d9488",
-  indigo: "#4338ca",
-  yellow: "#ca8a04",
+  indigo: "#1E4976",
+  yellow: "#D9A030",
 };
 
 export default function CourseCard({ course }) {

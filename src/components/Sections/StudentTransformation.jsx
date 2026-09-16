@@ -1,73 +1,82 @@
-import { ArrowRight, X, Check } from "lucide-react";
+import { X, Check } from "lucide-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import SectionHeading from "../ui/SectionHeading";
 import "./StudentTransformation.css";
 
 const before = [
   "Hesitates to speak in English",
   "Limited vocabulary",
-  "Grammar confusion",
+  "Fear of making mistakes",
   "Low confidence in conversations",
   "Struggles in interviews",
 ];
 
 const after = [
-  "Communicates with more confidence",
-  "Improved vocabulary in context",
-  "Better sentence construction",
-  "More comfortable in conversations",
-  "Better prepared for interviews",
+  "Communicates with confidence",
+  "Richer vocabulary in context",
+  "Comfortable making mistakes",
+  "Expresses ideas clearly",
+  "Interview-ready communication",
 ];
 
 export default function StudentTransformation() {
   const { ref, visible } = useScrollAnimation();
   return (
-    <section className="section" id="transformation" ref={ref}>
-      <div className="container">
-        <SectionHeading
-          label="Student Journey"
-          title="From Hesitation to Confidence"
-          subtitle="Here is what many of our students experience over the course of their learning journey."
-        />
-        <div className={`transform-grid fade-up${visible ? " visible" : ""}`}>
-          <div className="transform-col transform-col--before">
-            <div className="transform-col__header">
-              <span className="transform-col__tag transform-col__tag--before">Before</span>
-              <h3>Common Challenges</h3>
+    <section className="transform section--dark" id="transformation" ref={ref}>
+      <div className="container transform__inner">
+        {/* Left — text */}
+        <div className={`transform__content fade-up${visible ? " visible" : ""}`}>
+          <span className="section-label section-label--light">Student Journey</span>
+          <h2 className="section-title section-title--white">
+            From <em>"I can't speak"</em><br />
+            to <span className="gold">"I can express myself."</span>
+          </h2>
+          <p className="transform__subtitle">
+            Here is what many of our students experience over the course of
+            their learning journey.
+          </p>
+
+          <div className="transform__cols">
+            <div className="transform__col">
+              <div className="transform__col-label transform__col-label--before">Before</div>
+              <ul>
+                {before.map((b) => (
+                  <li key={b}>
+                    <span className="transform__icon transform__icon--x"><X size={12} /></span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul>
-              {before.map((b) => (
-                <li key={b}>
-                  <span className="transform-icon transform-icon--x"><X size={14} /></span>
-                  {b}
-                </li>
-              ))}
-            </ul>
+
+            <div className="transform__divider" aria-hidden="true">→</div>
+
+            <div className="transform__col">
+              <div className="transform__col-label transform__col-label--after">After</div>
+              <ul>
+                {after.map((a) => (
+                  <li key={a}>
+                    <span className="transform__icon transform__icon--check"><Check size={12} /></span>
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <div className="transform-arrow" aria-hidden="true">
-            <ArrowRight size={32} />
-            <span>Learning Journey</span>
-          </div>
-
-          <div className="transform-col transform-col--after">
-            <div className="transform-col__header">
-              <span className="transform-col__tag transform-col__tag--after">After</span>
-              <h3>What Students Report</h3>
-            </div>
-            <ul>
-              {after.map((a) => (
-                <li key={a}>
-                  <span className="transform-icon transform-icon--check"><Check size={14} /></span>
-                  {a}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p className="transform__disclaimer">
+            * Results vary by individual. These reflect common experiences shared by students.
+          </p>
         </div>
-        <p className="transform-disclaimer">
-          * Results vary by individual. These reflect common experiences shared by students — not guaranteed outcomes.
-        </p>
+
+        {/* Right — image */}
+        <div className={`transform__image-col fade-up${visible ? " visible" : ""}`} style={{ transitionDelay: "0.12s" }}>
+          <img
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80"
+            alt="Student speaking confidently"
+            className="transform__image"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );

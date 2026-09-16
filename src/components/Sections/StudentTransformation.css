@@ -1,102 +1,126 @@
-.transform-grid {
+.transform {
+  background: var(--color-dark);
+  padding: var(--section-py) 0;
+}
+
+.transform__inner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
   align-items: center;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
-.transform-col {
-  background: #fff;
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  border: 1px solid var(--color-border);
-}
-
-.transform-col--before { border-top: 3px solid #ef4444; }
-.transform-col--after { border-top: 3px solid var(--color-success); }
-
-.transform-col__header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-.transform-col__header h3 {
+.transform__subtitle {
   font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-text);
+  color: rgba(255,255,255,0.55);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
 }
 
-.transform-col__tag {
+.transform__subtitle em { font-style: italic; }
+
+.transform__cols {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.transform__col { flex: 1; }
+
+.transform__col-label {
+  display: inline-block;
   font-size: 0.6875rem;
   font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.2rem 0.625rem;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
+  margin-bottom: 1rem;
 }
 
-.transform-col__tag--before { background: #fee2e2; color: #dc2626; }
-.transform-col__tag--after { background: #dcfce7; color: #16a34a; }
+.transform__col-label--before {
+  background: rgba(220,38,38,0.15);
+  color: #f87171;
+  border: 1px solid rgba(220,38,38,0.25);
+}
 
-.transform-col ul {
+.transform__col-label--after {
+  background: rgba(22,163,74,0.15);
+  color: #4ade80;
+  border: 1px solid rgba(22,163,74,0.25);
+}
+
+.transform__col ul {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.transform-col ul li {
+.transform__col ul li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.625rem;
-  font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
 }
 
-.transform-icon {
-  width: 22px;
-  height: 22px;
+.transform__icon {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 1px;
 }
 
-.transform-icon--x { background: #fee2e2; color: #dc2626; }
-.transform-icon--check { background: #dcfce7; color: #16a34a; }
-
-.transform-arrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-primary);
+.transform__icon--x {
+  background: rgba(220,38,38,0.15);
+  color: #f87171;
 }
 
-.transform-arrow span {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-muted);
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+.transform__icon--check {
+  background: rgba(22,163,74,0.15);
+  color: #4ade80;
 }
 
-.transform-disclaimer {
-  text-align: center;
+.transform__divider {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  padding-top: 2.5rem;
+  flex-shrink: 0;
+}
+
+.transform__disclaimer {
   font-size: 0.8125rem;
-  color: var(--color-text-light);
-  margin-top: 1.5rem;
-  font-style: italic;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .transform-grid { grid-template-columns: 1fr; }
-  .transform-arrow { flex-direction: row; justify-content: center; }
-  .transform-arrow span { writing-mode: horizontal-tb; }
+/* Image */
+.transform__image-col { position: relative; }
+
+.transform__image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .transform__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .transform__image { height: 320px; }
+  .transform__image-col { order: -1; }
+}
+
+@media (max-width: 640px) {
+  .transform__cols { flex-direction: column; gap: 1.5rem; }
+  .transform__divider { display: none; }
+  .transform__image { height: 240px; }
 }

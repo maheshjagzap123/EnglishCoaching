@@ -7,8 +7,8 @@ export default function StarRating({ rating = 5, size = 14 }) {
         <Star
           key={i}
           size={size}
-          fill={i < rating ? "#f59e0b" : "none"}
-          color={i < rating ? "#f59e0b" : "#d1d5db"}
+          fill={i < rating ? "#F4B942" : "none"}
+          color={i < rating ? "#F4B942" : "#d1d5db"}
         />
       ))}
     </div>

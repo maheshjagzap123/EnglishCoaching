@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { siteConfig } from "../../config/siteConfig";
+import { openWhatsApp } from "../../utils/whatsapp";
+import "./Footer.css";
 
 const InstagramIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -14,9 +17,6 @@ const FacebookIcon = () => (
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
   </svg>
 );
-import { siteConfig } from "../../config/siteConfig";
-import { openWhatsApp } from "../../utils/whatsapp";
-import "./Footer.css";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -42,11 +42,24 @@ const courseLinks = [
 export default function Footer() {
   return (
     <footer className="footer">
+      {/* Pre-footer CTA */}
+      <div className="footer__cta">
+        <div className="container footer__cta-inner">
+          <div>
+            <h2 className="footer__cta-title">Ready to speak with confidence?</h2>
+            <p className="footer__cta-sub">Start with a free demo class. No commitment required.</p>
+          </div>
+          <Link to="/free-demo" className="btn btn--gold btn--lg">
+            Book a Free Demo →
+          </Link>
+        </div>
+      </div>
+
+      {/* Main footer */}
       <div className="container footer__grid">
-        {/* Brand */}
         <div className="footer__brand">
           <div className="footer__logo">
-            <span className="footer__logo-icon">FR</span>
+            <span className="footer__logo-icon">VE</span>
             <span>{siteConfig.name}</span>
           </div>
           <p className="footer__tagline">{siteConfig.tagline}</p>
@@ -64,7 +77,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className="footer__col">
           <h3 className="footer__heading">Quick Links</h3>
           <ul>
@@ -74,7 +86,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Programs */}
         <div className="footer__col">
           <h3 className="footer__heading">Our Programs</h3>
           <ul>
@@ -84,26 +95,13 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
         <div className="footer__col">
           <h3 className="footer__heading">Contact Us</h3>
           <ul className="footer__contact">
-            <li>
-              <MapPin size={15} />
-              <span>{siteConfig.address}</span>
-            </li>
-            <li>
-              <Phone size={15} />
-              <a href={`tel:${siteConfig.phoneRaw}`}>{siteConfig.phone}</a>
-            </li>
-            <li>
-              <Mail size={15} />
-              <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            </li>
-            <li>
-              <Clock size={15} />
-              <span>{siteConfig.workingHours}</span>
-            </li>
+            <li><MapPin size={15} /><span>{siteConfig.address}</span></li>
+            <li><Phone size={15} /><a href={`tel:${siteConfig.phoneRaw}`}>{siteConfig.phone}</a></li>
+            <li><Mail size={15} /><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+            <li><Clock size={15} /><span>{siteConfig.workingHours}</span></li>
           </ul>
           <button className="btn btn--whatsapp btn--sm footer__wa" onClick={() => openWhatsApp()}>
             <MessageCircle size={15} /> Chat on WhatsApp

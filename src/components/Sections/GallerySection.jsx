@@ -16,7 +16,7 @@ export default function GallerySection({ limit }) {
       <div className="container">
         <SectionHeading
           label="Gallery"
-          title="Life at FluentRise"
+          title="Life at Veyora"
           subtitle="A glimpse into our classroom activities, speaking sessions, and student experiences."
         />
         <div className="gallery-filters">

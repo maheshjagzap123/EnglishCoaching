@@ -1,6 +1,6 @@
 .cta-section {
   padding: var(--section-py) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: var(--color-dark);
   position: relative;
   overflow: hidden;
 }
@@ -8,12 +8,12 @@
 .cta-section::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 50%;
+  top: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(244,185,66,0.06) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -24,19 +24,24 @@
 }
 
 .cta-section__title {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
   font-weight: 900;
   color: #fff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-section__subtitle {
   font-size: 1.0625rem;
-  color: rgba(255,255,255,0.85);
-  max-width: 580px;
-  margin: 0 auto 2rem;
-  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.75;
 }
 
 .cta-section__btns {

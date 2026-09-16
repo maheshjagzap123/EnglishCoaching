@@ -18,7 +18,7 @@
 }
 
 .contact-info__item svg {
-  color: var(--color-primary);
+  color: var(--color-accent-dark);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -44,7 +44,7 @@
   transition: color var(--transition);
 }
 
-.contact-info__item a:hover { color: var(--color-primary); }
+.contact-info__item a:hover { color: var(--color-accent-dark); }
 
 .contact-social {
   display: flex;
@@ -75,10 +75,12 @@
 }
 
 .contact-form__title {
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--color-text);
   margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 .contact-form {
@@ -117,8 +119,8 @@
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(244,185,66,0.15);
 }
 
 .form-group textarea { resize: vertical; min-height: 100px; }

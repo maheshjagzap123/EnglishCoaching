@@ -10,7 +10,7 @@ export default function GalleryPage() {
       <div className="page-hero">
         <div className="container">
           <span className="section-label">Gallery</span>
-          <h1 className="page-hero__title">Life at FluentRise</h1>
+          <h1 className="page-hero__title">Life at Veyora</h1>
           <p className="page-hero__subtitle">
             A glimpse into our classroom activities, speaking sessions, workshops, and student experiences.
           </p>

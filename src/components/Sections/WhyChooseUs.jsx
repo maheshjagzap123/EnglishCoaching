@@ -1,37 +1,70 @@
-import { Users, MessageSquare, Clock, Monitor, Star, ThumbsUp, BookOpen, Smile } from "lucide-react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import SectionHeading from "../ui/SectionHeading";
 import "./WhyChooseUs.css";
 
-const reasons = [
-  { icon: <Users size={22} />, title: "Small Batch Sizes", desc: "Limited students per batch ensures every learner gets personal attention and speaking time." },
-  { icon: <MessageSquare size={22} />, title: "Practical Speaking Focus", desc: "Every class includes real speaking activities — not just theory. You speak from day one." },
-  { icon: <Star size={22} />, title: "Experienced Trainers", desc: "Our trainers bring years of experience in English communication and coaching." },
-  { icon: <Clock size={22} />, title: "Flexible Batch Timings", desc: "Morning, evening, weekend, and online batches to fit your schedule." },
-  { icon: <Monitor size={22} />, title: "Online & Offline Classes", desc: "Choose the mode that works for you — both offer the same quality of learning." },
-  { icon: <ThumbsUp size={22} />, title: "Personalised Feedback", desc: "Trainers provide individual feedback on your speaking, grammar, and pronunciation." },
-  { icon: <Smile size={22} />, title: "Beginner Friendly", desc: "No prior English background needed. We start from where you are comfortable." },
-  { icon: <BookOpen size={22} />, title: "Structured Curriculum", desc: "A clear week-by-week plan so you always know what you are learning and why." },
+const features = [
+  {
+    title: "Small Batches",
+    desc: "More speaking time for every student. Personal attention, not a crowd.",
+  },
+  {
+    title: "Practical Sessions",
+    desc: "Learn through real conversations, role plays and everyday situations.",
+  },
+  {
+    title: "Trainer Feedback",
+    desc: "Understand exactly where you can improve — pronunciation, fluency, accuracy.",
+  },
+  {
+    title: "Flexible Learning",
+    desc: "Morning, evening, weekend and online batches to fit your schedule.",
+  },
 ];
 
 export default function WhyChooseUs() {
   const { ref, visible } = useScrollAnimation();
   return (
-    <section className="section section--soft" id="why-us" ref={ref}>
-      <div className="container">
-        <SectionHeading
-          label="Why Choose Us"
-          title="What Makes FluentRise Different"
-          subtitle="We focus on practical communication skills, not just textbook English."
-        />
-        <div className={`why-grid stagger`}>
-          {reasons.map((r) => (
-            <div key={r.title} className={`why-card fade-up${visible ? " visible" : ""}`}>
-              <div className="why-card__icon">{r.icon}</div>
-              <h3 className="why-card__title">{r.title}</h3>
-              <p className="why-card__desc">{r.desc}</p>
+    <section className="why section" id="why-us" ref={ref}>
+      <div className="container why__inner">
+        {/* Left — Image */}
+        <div className={`why__image-col fade-up${visible ? " visible" : ""}`}>
+          <div className="why__image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80"
+              alt="Students in a speaking session"
+              className="why__image"
+              loading="lazy"
+            />
+            <div className="why__image-badge">
+              <span className="why__image-badge-num">10+</span>
+              <span>Years of teaching experience</span>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Right — Content */}
+        <div className={`why__content fade-up${visible ? " visible" : ""}`} style={{ transitionDelay: "0.1s" }}>
+          <span className="section-label">Why Choose Us</span>
+          <h2 className="section-title">
+            More than grammar.<br />
+            We build <span className="gold">communication.</span>
+          </h2>
+          <p className="why__intro">
+            Most English classes teach rules. We teach you how to actually use
+            the language — in conversations, interviews, presentations and
+            everyday situations.
+          </p>
+
+          <div className="why__features">
+            {features.map((f) => (
+              <div key={f.title} className="why__feature">
+                <div className="why__feature-dot" />
+                <div>
+                  <h3 className="why__feature-title">{f.title}</h3>
+                  <p className="why__feature-desc">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

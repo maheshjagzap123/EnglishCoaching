@@ -33,7 +33,7 @@ export default function MainLayout({ children, title, description }) {
     <>
       {siteConfig.demoMode && (
         <div className="demo-banner" role="banner">
-          ✦ Demo Website — All content is fictional and for demonstration purposes only
+          ✦ <strong>Demo Website</strong> — All content is fictional and for demonstration purposes only
         </div>
       )}
       <Navbar hasBanner={siteConfig.demoMode} />
